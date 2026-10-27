@@ -13,7 +13,11 @@ Lightning Stream uses the XBT node and the Lightning node already on your Umbrel
 apps from paulscode's community store (`https://github.com/paulscode/umbrel-store`), installed and synced first:
 
 - **Knots-BLAKE2b**, the XBT node;
-- **Lightning Fork**, the Lightning node.
+- **Lightning Fork**, the Lightning node. When it asks which Bitcoin node to use, pick
+  **Knots-BLAKE2b**, not Umbrel's standard Bitcoin Node.
+
+A first sync of Knots-BLAKE2b from nothing takes days, and Lightning Fork waits until the node is past
+block 961,640, the first BLAKE2b block. If you are new to XBT, start the node first.
 
 ## Add this store and install
 
@@ -24,7 +28,8 @@ apps from paulscode's community store (`https://github.com/paulscode/umbrel-stor
 
 The app connects to your Lightning node by itself. You don't need to copy any keys. Open it from your
 Umbrel dashboard and log in with the app password Umbrel shows for it. The first screens walk you
-through the rest: making your approval key and signing the starter spending rules.
+through the rest: making your approval key, signing the starter spending rules, and confirming that
+the app may pay with real money (**Settings → Your node → Pay with real money**).
 
 Updates come through Umbrel in the usual way when this store gets a new version.
 
@@ -34,7 +39,7 @@ The app pays from your own Lightning node, so the node needs a funded channel on
 network with a route to the shop. Without one, your first buy fails with "no route".
 
 1. In **Lightning Fork**, open one channel of 20,000 to 50,000 sats. 20,000 is the smallest lnd
-   accepts by default, and a shop's ticket is about 1,000 sats.
+   accepts by default, and a shop's ticket is about 900 sats.
 2. Open it to any well-connected public node, or straight to our test shop's node. Some public nodes
    take only channels of 100,000 sats or more; they refuse a smaller one before anything is paid, so
    a refusal costs nothing. For a small channel, use the shop's node, which is reachable over Tor
@@ -46,6 +51,9 @@ network with a route to the shop. Without one, your first buy fails with "no rou
 If a payment can't find a route, check that the channel is active and your side holds more than about
 1,000 sats, wait ten minutes, or open a second channel to a different node. Still stuck? Open an issue
 at https://github.com/AwokenLazarus/Lightning-Stream/issues with your node's public key.
+
+The whole setup, for Umbrel, StartOS and Linux, is on the website:
+https://lazarus-xbt.xyz/stream/start/
 
 ## Please read
 
