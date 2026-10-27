@@ -35,8 +35,10 @@ network with a route to the shop. Without one, your first buy fails with "no rou
 
 1. In **Lightning Fork**, open one channel of 20,000 to 50,000 sats. 20,000 is the smallest lnd
    accepts by default, and a shop's ticket is about 1,000 sats.
-2. Open it to any well-connected public node, or straight to our test shop's node, which is reachable
-   over Tor (Lightning Fork on Umbrel has Tor on):
+2. Open it to any well-connected public node, or straight to our test shop's node. Some public nodes
+   take only channels of 100,000 sats or more; they refuse a smaller one before anything is paid, so
+   a refusal costs nothing. For a small channel, use the shop's node, which is reachable over Tor
+   (Lightning Fork on Umbrel has Tor on):
    - key: `02c86d8dd97ac82338edece395f29369253894033464315c8d9e086a8cafe3a3b6`
    - address: `37g2spzl2oe4smllorb4wkl6n4nm2zcux5ozv5wzwpibxq63h2mayjid.onion:9735`
 3. Wait until the channel is active: a few confirmations, then a few minutes.
