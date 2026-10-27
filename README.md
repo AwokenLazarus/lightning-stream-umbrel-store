@@ -40,13 +40,19 @@ network with a route to the shop. Without one, your first buy fails with "no rou
 
 1. In **Lightning Fork**, open one channel of 20,000 to 50,000 sats. 20,000 is the smallest lnd
    accepts by default, and a shop's ticket is about 900 sats.
-2. Open it to any well-connected public node, or straight to our test shop's node. Some public nodes
-   take only channels of 100,000 sats or more; they refuse a smaller one before anything is paid, so
-   a refusal costs nothing. For a small channel, use the shop's node, which is reachable over Tor
-   (Lightning Fork on Umbrel has Tor on):
-   - key: `02c86d8dd97ac82338edece395f29369253894033464315c8d9e086a8cafe3a3b6`
-   - address: `37g2spzl2oe4smllorb4wkl6n4nm2zcux5ozv5wzwpibxq63h2mayjid.onion:9735`
+2. Open it to a well-connected public node, such as ours, lazarus-xbt (it takes channels of 20,000
+   sats or more), reachable over Tor (Lightning Fork on Umbrel has Tor on):
+   - key: `033665f1accdf08dd2d2f22f62f8dd70ccd238381402b10c12c0be3e7fd493b8d5`
+   - address: `6y4rkcimjbzfhj2j4oidbg4br4xgdfvpbsx7x3ifedv6jgfxg55wtiqd.onion:9735`
+
+   Some nodes take only larger channels; they refuse a smaller one before anything is paid, so a
+   refusal costs nothing. A channel straight to a shop's own node pays it from 0.1.17 on; before
+   0.1.17 it cannot pay a shop that sells by BOLT 12 offer, ours included.
 3. Wait until the channel is active: a few confirmations, then a few minutes.
+
+If you added our shop before 0.1.16, open it under **Services → Sellers** and press **Check for
+updates** before **Allow this seller to be paid**: the list saved before then names the shop's old
+address, and Allow keeps failing on it.
 
 If a payment can't find a route, check that the channel is active and your side holds more than about
 1,000 sats, wait ten minutes, or open a second channel to a different node. Still stuck? Open an issue
