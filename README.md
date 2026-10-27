@@ -28,6 +28,23 @@ through the rest: making your approval key and signing the starter spending rule
 
 Updates come through Umbrel in the usual way when this store gets a new version.
 
+## Before you buy: get a channel
+
+The app pays from your own Lightning node, so the node needs a funded channel on the BLAKE2b Lightning
+network with a route to the shop. Without one, your first buy fails with "no route".
+
+1. In **Lightning Fork**, open one channel of 20,000 to 50,000 sats. 20,000 is the smallest lnd
+   accepts by default, and a shop's ticket is about 1,000 sats.
+2. Open it to any well-connected public node, or straight to our test shop's node, which is reachable
+   over Tor (Lightning Fork on Umbrel has Tor on):
+   - key: `02c86d8dd97ac82338edece395f29369253894033464315c8d9e086a8cafe3a3b6`
+   - address: `37g2spzl2oe4smllorb4wkl6n4nm2zcux5ozv5wzwpibxq63h2mayjid.onion:9735`
+3. Wait until the channel is active: a few confirmations, then a few minutes.
+
+If a payment can't find a route, check that the channel is active and your side holds more than about
+1,000 sats, wait ten minutes, or open a second channel to a different node. Still stuck? Open an issue
+at https://github.com/AwokenLazarus/Lightning-Stream/issues with your node's public key.
+
 ## Please read
 
 - This software moves real sats. It has been tested on mainnet with small amounts only. Start with
