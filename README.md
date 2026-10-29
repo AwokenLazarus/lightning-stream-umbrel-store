@@ -61,6 +61,14 @@ at https://github.com/AwokenLazarus/Lightning-Stream/issues with your node's pub
 The whole setup, for Umbrel, StartOS and Linux, is on the website:
 https://lazarus-xbt.xyz/stream/start/
 
+## Use AI in your own programs (0.1.19)
+
+Under **Services → AI** the app gives your box an OpenAI-compatible address on your network, such as
+`http://umbrel.local:33540/v1`. Any AI app or agent that speaks that API (Open WebUI, coding agents,
+your own scripts) can use the AI models of the sellers you allowed, paid per token within your
+spending rules. Make a key for each program on that page; each key has its own limit and can be
+revoked.
+
 ## Please read
 
 - This software moves real sats. It has been tested on mainnet with small amounts only. Start with
