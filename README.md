@@ -1,8 +1,11 @@
 # Lightning Stream for Umbrel
 
 This is an Umbrel community app store with one app, **Lightning Stream**. It lets you buy and sell
-services over XBT Lightning, paid as you use them: a film by the megabyte, an AI model by the token,
-or a miner's hashrate by the piece of work. Buying and selling happen in the same app.
+services over XBT Lightning, paid as you use them: a seller's own web app (Jellyfin and the like) or
+files by the megabyte, an AI model by the token, a miner's hashrate by the piece of work, a VPN exit by
+the gigabyte. Buying and selling happen in the same app. In 0.2.0 a shop can be reached by its key
+alone over an encrypted link, with no domain or port forward, and your wallet pays a shop no more than
+its listing shows.
 
 The app's source code, documentation and issue tracker are in
 [AwokenLazarus/Lightning-Stream](https://github.com/AwokenLazarus/Lightning-Stream).
