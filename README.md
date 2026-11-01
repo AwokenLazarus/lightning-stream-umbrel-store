@@ -64,6 +64,14 @@ at https://github.com/AwokenLazarus/Lightning-Stream/issues with your node's pub
 The whole setup, for Umbrel, StartOS and Linux, is on the website:
 https://lazarus-xbt.xyz/stream/start/
 
+## Rent hashrate through your own gateway (0.2.0)
+
+The app now comes with its own gateway, the **Stream Gateway** (DATUM-compatible), and rented
+hashrate goes through it. It masks every job with a key it holds, so a rented miner can't tell which
+share is a block and can't withhold one. The app checks the jobs before each rental and pays nothing
+before the first job is shown masked. Under **Services → Hashrate**, *Your gateway* sets where blocks
+pay: solo to your own XBT address (the default), or on Lazarus Pool.
+
 ## Use AI in your own programs (0.1.19)
 
 Under **Services → AI** the app gives your box an OpenAI-compatible address on your network, such as
