@@ -94,4 +94,5 @@ revoked.
 Thanks to Chris Guida, whose review is the reason Lightning Stream is built on Lightning, and to Kyle
 Santiago, whose points shaped its ticket limits. Lightning Fork and Knots-BLAKE2b for Umbrel are by paulscode.
 
-Licence: MIT or Apache-2.0, as in the source repository.
+Licence: MIT or Apache-2.0, as in the source repository. The bundled Stream Gateway image is MIT, linked statically
+with two LGPL libraries (libmicrohttpd and argp-standalone); see the 0.2.0 CHANGELOG for their sources and how to relink.
