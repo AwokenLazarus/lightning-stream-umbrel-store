@@ -1,8 +1,11 @@
 # Lightning Stream for Umbrel
 
 This is an Umbrel community app store with one app, **Lightning Stream**. It lets you buy and sell
-services over XBT Lightning, paid as you use them: a film by the megabyte, an AI model by the token,
-or a miner's hashrate by the piece of work. Buying and selling happen in the same app.
+services over XBT Lightning, paid as you use them: a seller's own web app (Jellyfin and the like) or
+files by the megabyte, an AI model by the token, a miner's hashrate by the piece of work, a VPN exit by
+the gigabyte. Buying and selling happen in the same app. In 0.2.0 a shop can be reached by its key
+alone over an encrypted link, with no domain or port forward, and your wallet pays a shop no more than
+its listing shows.
 
 The app's source code, documentation and issue tracker are in
 [AwokenLazarus/Lightning-Stream](https://github.com/AwokenLazarus/Lightning-Stream).
@@ -61,6 +64,14 @@ at https://github.com/AwokenLazarus/Lightning-Stream/issues with your node's pub
 The whole setup, for Umbrel, StartOS and Linux, is on the website:
 https://lazarus-xbt.xyz/stream/start/
 
+## Rent hashrate through your own gateway (0.2.0)
+
+The app now comes with its own gateway, the **Stream Gateway** (DATUM-compatible), and rented
+hashrate goes through it. It masks every job with a key it holds, so a rented miner can't tell which
+share is a block and can't withhold one. The app checks the jobs before each rental and pays nothing
+before the first job is shown masked. Under **Services → Hashrate**, *Your gateway* sets where blocks
+pay: solo to your own XBT address (the default), or on Lazarus Pool.
+
 ## Use AI in your own programs (0.1.19)
 
 Under **Services → AI** the app gives your box an OpenAI-compatible address on your network, such as
@@ -83,4 +94,5 @@ revoked.
 Thanks to Chris Guida, whose review is the reason Lightning Stream is built on Lightning, and to Kyle
 Santiago, whose points shaped its ticket limits. Lightning Fork and Knots-BLAKE2b for Umbrel are by paulscode.
 
-Licence: MIT or Apache-2.0, as in the source repository.
+Licence: MIT or Apache-2.0, as in the source repository. The bundled Stream Gateway image is MIT, linked statically
+with two LGPL libraries (libmicrohttpd and argp-standalone); see the 0.2.0 CHANGELOG for their sources and how to relink.
