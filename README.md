@@ -62,7 +62,7 @@ If a payment can't find a route, check that the channel is active and your side 
 at https://github.com/AwokenLazarus/Lightning-Stream/issues with your node's public key.
 
 The whole setup, for Umbrel, StartOS and Linux, is on the website:
-https://lazarus-xbt.xyz/stream/start/
+https://lightning-stream.com/guide/
 
 ## Rent hashrate through your own gateway (0.2.0)
 
